@@ -1,4 +1,5 @@
 import moment from "moment";
+import Image from "next/image";
 
 const SingleBike = ({ singlebike }) => {
   const { thumb, title, description, date_stolen, stolen_location } =
@@ -10,11 +11,11 @@ const SingleBike = ({ singlebike }) => {
     <div className="w-full rounded-md bg-gray-200 dark:bg-gray-dark">
       <div className="flex h-full flex-col items-stretch gap-4 p-4 lg:flex-row">
         <div className="rounded-md">
-          <img
+          <Image
             src={thumb ? thumb : "/images/bike-placeholder.png"}
             alt="thumb"
-            width={"300px"}
-            height={"300px"}
+            width={300}
+            height={300}
             className="rounded-md"
           />
         </div>

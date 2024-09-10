@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -9,16 +10,16 @@ function NotFoundPage() {
           <div className="w-full px-4">
             <div className="mx-auto max-w-[530px] text-center">
               <div className="mb-8">
-                <img
+                <Image
                   src={"/images/404-error.png"}
                   alt="404"
-                  width={"300px"}
-                  height={"300px"}
+                  width={300}
+                  height={300}
                   className="mx-auto"
                 />
               </div>
               <h3 className="mb-8 text-3xl font-bold text-black dark:text-white sm:text-4xl">
-                We are either working on this page or it doesn't exist
+                We are either working on this page or it doesn&apos;t exist 
               </h3>
 
               <Link
