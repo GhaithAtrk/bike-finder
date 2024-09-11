@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, Dispatch, SetStateAction } from "react";
 import ReactPaginate from "react-paginate";
 
 const Pagination = ({
+  reports,
   totalReports,
   setCurrentPage,
 }: {
-  totalReports: any;
-  setCurrentPage: any;
+  reports: string[];
+  totalReports: number;
+  setCurrentPage: Dispatch<SetStateAction<number>>;
 }) => {
   const itemsPerPage = 10;
 
@@ -22,9 +24,10 @@ const Pagination = ({
     setItemOffset(newOffset);
   };
 
-  return (
+  return reports.length > 0 ? (
     <div className="flex items-center justify-between border border-gray-200 bg-white px-4 py-3 dark:bg-gray-dark sm:px-6">
-      showing reports from {itemOffset + 1} to {Math.min(endOffset, totalReports)}
+      showing reports from {itemOffset + 1} to{" "}
+      {Math.min(endOffset, totalReports)}
       <ReactPaginate
         breakLabel="..."
         nextLabel="next >"
@@ -37,6 +40,8 @@ const Pagination = ({
         activeClassName="active"
       />
     </div>
+  ) : (
+    ""
   );
 };
 

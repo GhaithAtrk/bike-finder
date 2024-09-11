@@ -56,7 +56,7 @@ const Main = () => {
               ))
             ) : (
               <div className="w-full rounded-md bg-gray-200 p-4 dark:bg-gray-dark">
-                <div className="h-full w-full rounded-md bg-gray-100 p-2 text-center">
+                <div className="h-full w-full rounded-md bg-gray-100 p-2 text-center dark:bg-black">
                   No results found for your search
                 </div>
               </div>
@@ -64,6 +64,7 @@ const Main = () => {
           </div>
 
           <Pagination
+          reports={reports}
             totalReports={totalReports}
             setCurrentPage={setCurrentPage}
           />

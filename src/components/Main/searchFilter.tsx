@@ -1,9 +1,11 @@
+import { Dispatch, SetStateAction } from "react";
+
 const SearchFilter = ({
   setQuery,
   getStolenBikes,
   totalReports,
 }: {
-  setQuery: any;
+  setQuery: Dispatch<SetStateAction<string>>;
   getStolenBikes: Function;
   totalReports: number;
 }) => {
@@ -25,7 +27,7 @@ const SearchFilter = ({
         >
           <input
             name="query"
-            className="my-2 h-12 w-full border-4 border-gray-200 p-2 focus:outline-none"
+            className="my-2 h-12 w-full border-4 border-gray-200 dark:border-gray-dark p-2  focus:outline-none"
             onChange={(e) => setQuery(e.target.value)}
           />
           <button
@@ -37,7 +39,7 @@ const SearchFilter = ({
         </form>
       </div>
       <div className="bg-red-30 0 mb-10 w-full">
-        <div className="w-fit rounded-md bg-gray-200 dark:bg-gray-dark p-2 text-end text-lg ">
+        <div className="w-fit rounded-md bg-gray-200 p-2 text-end text-lg dark:bg-gray-dark ">
           Munich Number Of Cases: {totalReports}
         </div>
       </div>
