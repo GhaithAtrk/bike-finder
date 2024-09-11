@@ -17,8 +17,7 @@ const Pagination = ({
   const endOffset = itemOffset + itemsPerPage;
   const pageCount = Math.ceil(totalReports / itemsPerPage);
 
-  // Invoke when user click to request another page.
-  const handlePageClick = (event: any) => {
+  const handlePageClick = (event) => {
     const newOffset = (event.selected * itemsPerPage) % totalReports;
     setCurrentPage(event.selected + 1);
     setItemOffset(newOffset);
@@ -38,10 +37,11 @@ const Pagination = ({
         renderOnZeroPageCount={null}
         containerClassName="pagination"
         activeClassName="active"
+        forcePage={itemOffset / itemsPerPage}
       />
     </div>
   ) : (
-    ""
+    null
   );
 };
 
